@@ -13,10 +13,10 @@ public class FileReader {
         String email = null;
         Long phone = null;
 
-        try (BufferedReader br = new BufferedReader(new java.io.FileReader(file))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] keyValue = line.split(": ");
+        try (BufferedReader bufferedReader = new BufferedReader(new java.io.FileReader(file))) {
+            String l;
+            while ((l = bufferedReader.readLine()) != null) {
+                String[] keyValue = l.split(": ");
                 switch (keyValue[0]) {
                     case "Name":
                         name = keyValue[1];
