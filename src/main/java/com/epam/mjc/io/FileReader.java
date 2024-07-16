@@ -2,7 +2,6 @@ package com.epam.mjc.io;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
@@ -34,11 +33,8 @@ public class FileReader {
                     default: continue;
                 }
             }
-        } catch (FileNotFoundException e) { e.printStackTrace();}
-        catch (RuntimeException e) {}
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException e) {  e.getCause(); }
+
 
         return new Profile(name, age, email, phone);
     }
