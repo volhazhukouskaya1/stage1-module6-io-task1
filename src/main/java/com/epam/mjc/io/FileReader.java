@@ -31,11 +31,12 @@ public class FileReader {
                     case "Phone":
                         phone = Long.parseLong(keyValue[1]);
                         break;
+                    default: continue;
                 }
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) { e.printStackTrace();}
+        catch (RuntimeException e) {}
+        catch (IOException e) {
             e.printStackTrace();
         }
 
